@@ -4,7 +4,7 @@
     <title>Onebitchat</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -30,6 +30,7 @@
         <%= render "team_users/remove_modal" %>
         <%= render "channels/add_modal" %>
         <%= render "channels/remove_modal" %>
+        <%= render "teams/get_out_team_modal" %>
       <% end %>
     <% end %>
   </body>

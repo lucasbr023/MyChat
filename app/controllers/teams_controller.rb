@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-  before_action :set_team, only: [:destroy]
+  before_action :set_team, only: [:destroy, :get_out]
   before_action :set_by_slug_team, only: [:show]
 
   def index
@@ -28,6 +28,12 @@ class TeamsController < ApplicationController
     respond_to do |format|
       format.json { render json: true }
     end
+  end
+
+  def get_out
+    authorize! :read, @team
+    @team.users.delete(current_user.id)
+    redirect_to main_app.root_url
   end
 
   private
